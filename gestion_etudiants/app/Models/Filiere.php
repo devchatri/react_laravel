@@ -11,4 +11,9 @@ class Filiere extends Model
     protected $primaryKey = 'id';
     protected $nom = 'nom';
     use HasFactory;
+
+    public function etudiants()
+    {
+        return $this->hasMany(Etudiant::class, 'filiere_id', 'id');
+    }
 }

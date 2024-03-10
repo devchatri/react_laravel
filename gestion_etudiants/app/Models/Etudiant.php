@@ -11,4 +11,9 @@ class Etudiant extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['nom', 'prenom', 'sexe','filiere_id'];
     use HasFactory;
+
+    public function filiere()
+    {
+        return $this->belongsTo(Filiere::class, 'filiere_id', 'id');
+    }
 }
